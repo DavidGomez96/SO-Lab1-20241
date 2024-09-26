@@ -52,3 +52,5 @@ void validatorContDiff(const char *nombreArch1, const char *nombreArch2) {
     }
 }
 
+
+
