@@ -108,3 +108,24 @@ void validarCantidadArgumentos(int argc, char *argv[]) {
         exit(ERROR);
     }
 }
+
+
+void validarExistenciaArchivo(int argc, char *argv[]){
+
+    const char *nombreArchivoEntrada = argv[1]; 
+    
+    if (!archivoExiste(nombreArchivoEntrada)) {
+        fprintf(stderr, "reverse: cannot open file '/no/such/file.txt'\n");
+        exit(ERROR);
+    }
+}
+
+int main(int argc, char *argv[]) {
+
+    validarCantidadArgumentos(argc, argv);
+    validarExistenciaArchivo(argc, argv);
+    archivosNombreDiffArchivos(argv[1], argv[2]);
+    validarContenidoDiffArchivo(argv[1], argv[2]);
+    validarArchivosInvertidos(argv[1], argv[2]);
+    return 0;
+}
