@@ -101,3 +101,10 @@ int validarArchivosInvertidos(const char *nombreArch1,const char *nombreArch2){
 
     return 0;
 }
+
+void validarCantidadArgumentos(int argc, char *argv[]) {
+    if (argc > MAX_ARG) {
+        fprintf(stderr, "usage: reverse <input> <output>\n");
+        exit(ERROR);
+    }
+}
